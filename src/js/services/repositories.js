@@ -1,8 +1,8 @@
-import { baseUrl } from "../variables.js";
+import { baseUrl , quantityRepositories} from "../variables.js";
 
 async function getRepositories(userName) {
   const response = await fetch(
-    `${baseUrl}/${userName}/repos` //poderia usar ?per_page=10 para filtrar a quantidade de repositórios.
+    `${baseUrl}/${userName}/repos?per_page=${quantityRepositories}`
   );
   return response.json();
 }
