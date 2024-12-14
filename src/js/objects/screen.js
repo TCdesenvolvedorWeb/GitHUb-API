@@ -26,6 +26,20 @@ const screen = {
                 <ul>${repositoriesItens}</ul>
             </div>`
         }
+
+        user.events.forEach((events) => {
+            if (events.type !== "CreateEvent") {
+              this.userProfile.innerHTML += `<div class="container events">
+                    <h3>${events.repo.name}</h3>
+                    <p>${events.payload.commits[0].message}</p>
+              </div>`;
+            } else if (events.type !== "PushEvent") {
+              this.userProfile.innerHTML += `<div class="container events">
+                    <h3>${events.repo.name}</h3>
+                    <p>Sem mensagem de commit</p>
+                <div>`;
+            }
+          });
     },
     renderNotFound(){
         this.userProfile.innerHTML = "<h3>Usuário não encontrado</h3>"
