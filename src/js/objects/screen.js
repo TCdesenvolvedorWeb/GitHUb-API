@@ -12,7 +12,12 @@ const screen = {
                     </div>`;
 
         let repositoriesItens = '';
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`);
+        user.repositories.forEach(repo => repositoriesItens += 
+            `<li>
+                <a href="${repo.html_url}" target="_blank">${repo.name} 
+                    <p><span class="span">🍴 ${repo.forks}</span> <span class="span">⭐ ${repo.stargazers_count}</span> <span class="span">👀 ${repo.watchers}</span>  <span class="span">💻 ${repo.language}</span></p>
+                </a>
+            </li>`);
 
         if (user.repositories.length > 0){
             this.userProfile.innerHTML +=  
@@ -21,21 +26,6 @@ const screen = {
                 <ul>${repositoriesItens}</ul>
             </div>`
         }
-
-        user.events.forEach((events) => {
-            if (events.type !== "CreateEvent") {
-              this.userProfile.innerHTML += `<div class="container events">
-                    <h3>${events.repo.name}</h3>
-                    <p>${events.payload.commits[0].message}</p>
-              </div>`;
-            } else if (events.type !== "PushEvent") {
-              this.userProfile.innerHTML += `<div class="container events">
-                    <h3>${events.repo.name}</h3>
-                    <p>Sem mensagem de commit</p>
-                <div>`;
-            }
-          });
-
     },
     renderNotFound(){
         this.userProfile.innerHTML = "<h3>Usuário não encontrado</h3>"
