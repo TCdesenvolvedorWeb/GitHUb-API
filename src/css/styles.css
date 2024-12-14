@@ -80,7 +80,7 @@ main {
 }
 
 .container header #btn-search:hover {
-  background-color: hotpink;
+  background-color: #24292e;
   color: #ffffff;
   border-color: #ffffff;
 }
@@ -106,7 +106,7 @@ main {
 .container .profile-data .info img {
   width: 50%;
   border-radius: 50%;
-  border: 10px solid hotpink;
+  border: 10px solid #24292e;
 }
 
 .container .profile-data .info h1 {
@@ -154,7 +154,7 @@ main {
 }
 
 .container .profile-data .repositories ul li a:hover {
-  background-color: hotpink;
+  background-color: #24292e;
   color: #fff;
 }
 
@@ -211,6 +211,7 @@ main {
   border: solid 1px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
+  transition: 0.1s ease-in-out;
 }
 
 .container-events:hover {
