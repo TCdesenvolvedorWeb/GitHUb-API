@@ -194,6 +194,6 @@ main {
 
 /* ----- EVENTOS ------ */
 
-.container .eventos {
-  margin: 10px;
+.container.events {
+  margin-bottom: 10px;
 }

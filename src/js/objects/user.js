@@ -17,6 +17,10 @@ const user = {
     setRepositories(repositories) {
         this.repositories = repositories;
     },
+    events: [],
+    setEvent(events) {
+      this.events = events;
+    },
 }
 
 export {user}
