@@ -191,3 +191,9 @@ main {
     padding: 0;
   }
 }
+
+/* ----- EVENTOS ------ */
+
+.container .eventos {
+  margin: 10px;
+}
